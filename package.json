@@ -1,0 +1,21 @@
+{
+  "name": "youtube-to-mp3",
+  "version": "1.0.0",
+  "description": "Convert youtube to MP3 and upload to SkyNet",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin Kaiser",
+  "license": "MIT",
+  "dependencies": {
+    "ffmpeg.js": "^4.2.9003",
+    "react-native-ytdl": "github:benkaiser/react-native-ytdl",
+    "skynet-js": "^2.3.1",
+    "ts-loader": "^8.0.7",
+    "typescript": "^4.0.5",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
+  }
+}

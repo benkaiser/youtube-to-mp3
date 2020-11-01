@@ -1,0 +1,27 @@
+{
+    "name": "Youtube to MP3",
+    "version": "1.0",
+    "permissions": [
+        "background",
+        "downloads",
+        "*://*.googlevideo.com/*",
+        "https://siasky.net/*"
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+       "128": "icon128.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "css": ["main.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "manifest_version": 2
+  }
