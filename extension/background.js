@@ -40165,7 +40165,7 @@ class YoutubeDownloaderBackground {
                     const url = URL.createObjectURL(blob);
                     this.updateStatus('Downloading');
                     this.triggerChromeDownload(url, fileName);
-                    this.updateStatus('Saving a copy to Sia SkyNet');
+                    this.updateStatus('Saving to Sia SkyNet');
                     this.uploadToSkyNet(blob, fileName);
                     break;
             }
@@ -40174,7 +40174,11 @@ class YoutubeDownloaderBackground {
     uploadToSkyNet(blob, filename) {
         return __awaiter(this, void 0, void 0, function* () {
             var file = new File([blob], filename, { type: "audio/mpeg" });
-            const skylink = yield client.uploadFile(file);
+            const skylink = yield client.uploadFile(file, {
+                onUploadProgress: (progress) => {
+                    this.updateStatus(`Saving to Sia SkyNet (${Math.round(progress * 100)}%)`);
+                }
+            });
             console.log("skylink created", skylink);
             try {
                 const datakey = this.videoId;
