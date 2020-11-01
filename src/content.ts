@@ -18,7 +18,7 @@ class YoutubeDownloaderContent {
   }
 
   drawButtons() {
-    const subscribeButton = document.querySelector('paper-button.ytd-subscribe-button-renderer');
+    const subscribeButton = document.querySelector('#meta paper-button.ytd-subscribe-button-renderer');
     if (!subscribeButton) {
       setTimeout(this.drawButtons.bind(this), 500);
     } else {
