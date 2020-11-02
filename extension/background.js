@@ -40019,6 +40019,7 @@ class YoutubeDownloaderBackground {
             this.getFileNameOnly().then((fileName) => {
                 this.updateStatus('Downloading');
                 this.triggerChromeDownload('https://siasky.net/' + skylink.replace('sia:', ''), fileName);
+                this.updateStatus('Download');
             });
         })
             .catch(() => {
@@ -40174,23 +40175,23 @@ class YoutubeDownloaderBackground {
     uploadToSkyNet(blob, filename) {
         return __awaiter(this, void 0, void 0, function* () {
             var file = new File([blob], filename, { type: "audio/mpeg" });
-            const skylink = yield client.uploadFile(file, {
-                onUploadProgress: (progress) => {
-                    this.updateStatus(`Saving to Sia SkyNet (${Math.round(progress * 100)}%)`);
-                }
-            });
-            console.log("skylink created", skylink);
             try {
+                const skylink = yield client.uploadFile(file, {
+                    onUploadProgress: (progress) => {
+                        this.updateStatus(`Saving to Sia SkyNet (${Math.round(progress * 100)}%)`);
+                    }
+                });
+                console.log("skylink created", skylink);
                 const datakey = this.videoId;
                 const data = skylink;
                 const revision = 0;
                 const entry = { datakey, data, revision };
                 yield client.registry.setEntry(privateKey, this.videoId, entry);
-                this.updateStatus('Saved a copy to Sia SkyNet');
             }
             catch (error) {
                 console.log(error);
             }
+            this.updateStatus('Download');
         });
     }
     triggerChromeDownload(url, fileName) {

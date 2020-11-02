@@ -55,6 +55,10 @@ class YoutubeDownloaderContent {
   updateStatus(status: string) {
     if (this.button) {
       this.button.textContent = status;
+      if (status == 'Download') {
+        this.button.removeAttribute('disabled');
+        this.disabled = false;
+      }
     }
   }
 }
