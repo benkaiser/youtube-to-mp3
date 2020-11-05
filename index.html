@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Youtube to MP3</title>
+    <link rel="stylesheet" href="./assets/roboto.min.css">
+    <link rel="stylesheet" href="./assets/normalize.min.css">
+    <link rel="stylesheet" href="./assets/milligram.1.4.1.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Youtube to MP3</h1>
+      <p>
+        A server-less chrome extension to convert youtube videos to mp3 files for download. If available, files are persisted to <a href="https://siasky.net/">Sia SkyNet</a> for future downloads by all users.
+      </p>
+      <p>This Youtube to MP3 chrome extension is different in a few ways:
+        <ol>
+          <li>The conversion takes place on your machine, not a server, so there's no server costs we need to cover with ads</li>
+          <li>The conversion logic exists on your machine, and is resilliant to takedowns</li>
+          <li>Your conversions are cached with <a href="https://siasky.net/">Sia SkyNet</a> for quick download without conversion in the future by everyone</li>
+        </ol>
+      </p>
+      <h2>Installation</h2>
+      <div class="row">
+        <div class="column column-50">
+          <p>
+            <a class="button" href="./extension.zip">Download Extension Zip</a>
+          </p>
+          <p>
+            Steps to Install:
+
+            <ol>
+              <li>Download extension zip file and unzip</li>
+              <li>Navigate to chrome://extensions in your browser</li>
+              <li>Enable developer mode in the top right</li>
+              <li>Click "Load unpacked" in the top left</li>
+            </ol>
+          </p>
+        </div>
+        <div class="column column-50">
+          <img src="assets/instructions.png" alt="instructions picture" />
+        </div>
+      </div>
+      <h2>Usage</h2>
+      <div class="row">
+        <div class="column column-50">
+        <p>
+          Just navigate to any youtube video and click the "Download MP3" button next to the Subscribe button.
+        </p>
+        <p>
+          If the file has not yet been converted, your machine will download the youtube video and convert it to an mp3. This process may take 30+ seconds depending on video size, your internet connection and your computers processing power. Once the file is converted a download will trigger on your browser for the file.
+        </p>
+        <p>
+          If someone has previously converted the video to mp3 using the extension already, the download will start in just a few seconds.
+        </p>
+        </div>
+        <div class="column column-50">
+          <img src="assets/usage.gif" alt="using youtube to mp3" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
