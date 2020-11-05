@@ -30,7 +30,7 @@ class YoutubeDownloaderBackground {
             this.getFileNameOnly().then((fileName) => {
                 this.updateStatus('Downloading');
                 this.triggerChromeDownload('https://siasky.net/' + skylink.replace('sia:', ''), fileName);
-                this.updateStatus('Download');
+                this.updateStatus('Download MP3');
             });
         })
         .catch(() => {
@@ -203,7 +203,7 @@ class YoutubeDownloaderBackground {
         var file = new File([blob], filename, { type: "audio/mpeg" });
         try {
             const skylink = await client.uploadFile(file, {
-                onUploadProgress: (progress) => {
+                onUploadProgress: (progress: number) => {
                     this.updateStatus(`Saving to Sia SkyNet (${ Math.round(progress * 100) }%)`);
                 }
             });
@@ -216,7 +216,7 @@ class YoutubeDownloaderBackground {
           } catch (error) {
             console.log(error);
           }
-          this.updateStatus('Download');
+          this.updateStatus('Download MP3');
     }
 
     triggerChromeDownload(url: Blob | string, fileName: string): void {
