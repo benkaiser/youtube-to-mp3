@@ -8,8 +8,8 @@ Once converted, these files are backed up with [Sia SkyNet](https://siasky.net/)
 
 ## Installation
 
-1. [Download a copy of this repo](https://github.com/benkaiser/youtube-to-mp3/archive/master.zip)
-2. Unzip the repo
+1. [Download a the extension folder of this repo](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/benkaiser/youtube-to-mp3/tree/master/extension)
+2. Unzip
 3. Go to chrome://extensions in Chrome
 4. Toggle the "Developer Mode" in the top right corner
 5. Click "Load unpacked"
