@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "ffmpeg.js": "^4.2.9003",
-    "react-native-ytdl": "github:benkaiser/react-native-ytdl",
+    "react-native-ytdl": "github:ytdl-js/react-native-ytdl",
     "skynet-js": "^2.3.1",
     "ts-loader": "^8.0.7",
     "typescript": "^4.0.5",
