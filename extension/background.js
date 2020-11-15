@@ -39728,7 +39728,7 @@ class YoutubeDownloaderBackground {
     triggerChromeDownload(url, fileName) {
         chrome.downloads.download({
             url: url,
-            filename: fileName
+            filename: fileName.replace(/[|"*?:<>]/g, "_")
         });
     }
 }
