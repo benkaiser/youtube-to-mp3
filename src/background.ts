@@ -74,8 +74,12 @@ class YoutubeDownloaderBackground {
         let artist = videoFullTitleParts[0] ? videoFullTitleParts[0].trim() : '';
         let title = videoFullTitleParts[1] ? videoFullTitleParts[1].trim() : '';
         if (info.videoDetails.media) {
-            title = info.videoDetails.media.song;
-            artist = info.videoDetails.media.artist;
+            if (info.videoDetails.media.song) {
+                title = info.videoDetails.media.song;
+            }
+            if (info.videoDetails.media.artist) {
+                artist = info.videoDetails.media.artist;
+            }
         }
         const fileName = videoFullTitle + '.mp3';
         return {
